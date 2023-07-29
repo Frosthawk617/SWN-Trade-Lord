@@ -1,0 +1,30 @@
+<form>
+ <table class="center">
+  <tr>
+    <th>Name</th>
+    <th>Credits</th>
+    <th>Tags</th>
+    <th><button type="button" id="deleteall">Delete All</button></th>
+  </tr>
+  {{#each goods}}
+  <tr>
+    <td>{{cargo}}</td>
+    <td>{{baseCost}}</td>
+    <td>{{tag}}</td>
+    <td><button type="button" class="delete" id="{{cargo}}">Delete</button></td>
+  </tr>
+  {{/each}}
+</table>
+ <table class="center">
+  <tr>
+    <td><input type="text" name="cargo" id="cargo"></td>
+    <td><input type="number" name="cost" id="newCost" min="10" max ="100000000" default="0"></td>
+    <td><input type="text" name="tag" id="tag"></td>
+  </tr>
+</table>  
+  <footer class="sheet-footer flexrow">
+    <button type="button" name="submit" class="submit" id="submit">
+        <i class="fa fa-check"></i> Submit
+    </button>
+  </footer>
+</form>

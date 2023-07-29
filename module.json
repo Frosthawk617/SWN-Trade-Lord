@@ -1,0 +1,28 @@
+{
+    "id": "tradelord",
+    "name": "tradelord",
+    "title": "Trading Automation",
+    "description": "",
+    "version": "v0.2.0",
+    "library": "false",
+    "manifestPlusVersion": "1.0.0",
+    "minimumCoreVersion": "10",
+    "compatibleCoreVersion": "10",
+    "authors": [
+        {
+            "name": "Frosthawk",
+            "url": ""
+        }
+    ],
+    "dependencies": [],
+    "conflicts": [],
+    "esmodules": [
+        "module.js"
+    ],
+    "scripts": [],
+    "styles": [],
+    "languages": [],
+    "url": "",
+    "manifest": "",
+    "download": ""
+}
