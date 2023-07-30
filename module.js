@@ -161,6 +161,10 @@ updateCargo(curCargo, target, newMoney, newTonnage);
 
           </select>
           </div>
+          <div>
+          <label for="modifier">Mod: </label>
+          <input type="number" name="modifier" value="0">
+          </div>
           `
       
           
@@ -176,6 +180,8 @@ updateCargo(curCargo, target, newMoney, newTonnage);
             let selectedCargo = html.find('[name="cargo"]').val();
             let amount = html.find('[name="amount"]').val();
             let worldPicked = html.find('[name="world"]').val();
+            let modifierString = html.find('[name="modifier"]').val();
+            var modifier = parseInt(modifierString);
             var world = worlds.find(o=> o.name === worldPicked);
             console.log(world);
             var actor = game.actors.getName(buyer);
@@ -219,6 +225,7 @@ if (target.system.cargo.value < space) {
             }
             var friction = parseInt(world.friction);
             rollMod += friction;
+            rollMod += modifier;
             let roll = await new Roll("(3d6-(@skill+@attr))+@mods",{skill: rank, attr: attr, mods: rollMod});
             await roll.toMessage();
            //conpare to table
@@ -329,7 +336,7 @@ buildConfirm(finalPrice,cargoObj,amount, target, space);
   myContent += `
             </select>
           </div> <div>
-          What are you buying?
+          What are you selling?
           <select name="cargo">`
    for (var c = 0; c < shipCargo.length; c++){
             myContent += `
@@ -350,6 +357,10 @@ buildConfirm(finalPrice,cargoObj,amount, target, space);
 
           </select>
           </div>
+          <div>
+          <label for="modifier">Mod: </label>
+          <input type="number" name="modifier" value="0">
+          </div>
           `
       
           
@@ -364,6 +375,8 @@ buildConfirm(finalPrice,cargoObj,amount, target, space);
             let buyer = html.find('[name="Buyer"]').val();
             let selectedCargo = html.find('[name="cargo"]').val();
             let selectedWorld = html.find('[name="world"]').val();
+            let modifierString = html.find('[name="modifier"]').val();
+            var modifier = parseInt(modifierString);
             var world = worlds.find(w=>w.name === selectedWorld)
             console.log(world);
             var actor = game.actors.getName(buyer);
@@ -404,6 +417,7 @@ buildConfirm(finalPrice,cargoObj,amount, target, space);
               }
                         var friction = parseInt(world.friction);
                         rollMod += friction;
+                        rollMod += modifier;
             let roll = await new Roll("(3d6+(@skill+@attr))+@mods",{skill: rank, attr: attr, mods: rollMod});
             await roll.toMessage();
            //conpare to table

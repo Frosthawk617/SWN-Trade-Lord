@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Frosthawk",
-            "url": ""
+            "url": "https://github.com/Frosthawk617/SWN-Trade-Lord"
         }
     ],
     "dependencies": [],
@@ -22,7 +22,7 @@
     "scripts": [],
     "styles": [],
     "languages": [],
-    "url": "",
-    "manifest": "",
-    "download": ""
+    "url": "https://github.com/Frosthawk617/SWN-Trade-Lord",
+    "manifest": "https://github.com/Frosthawk617/SWN-Trade-Lord/blob/main/module.json",
+    "download": "https://github.com/Frosthawk617/SWN-Trade-Lord/releases/download/beta/SWN-Trade-Lord-main.zip"
 }
