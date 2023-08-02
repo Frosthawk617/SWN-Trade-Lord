@@ -282,4 +282,14 @@ game.settings.register("tradelord", "worldStore",{
   }
 });
 
+game.settings.register("tradelord", "worldTableStore",{
+  name: "WorldTable",
+  scope: "world",
+  type: Array,
+  config:false,
+  default:[],
+  onChange:()=>{
+    console.log(game.settings.get('tradelord','worldTableStore'));
+  }
+});
 };

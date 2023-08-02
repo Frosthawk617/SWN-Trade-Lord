@@ -3,7 +3,7 @@
     "name": "tradelord",
     "title": "Trading Automation",
     "description": "",
-    "version": "v0.2.0",
+    "version": "v0.3.1",
     "library": "false",
     "manifestPlusVersion": "1.0.0",
     "minimumCoreVersion": "10",
@@ -23,6 +23,6 @@
     "styles": [],
     "languages": [],
     "url": "https://github.com/Frosthawk617/SWN-Trade-Lord",
-    "manifest": "https://github.com/Frosthawk617/SWN-Trade-Lord/blob/main/module.json",
+    "manifest": "https://raw.githubusercontent.com/Frosthawk617/SWN-Trade-Lord/main/module.json",
     "download": "https://github.com/Frosthawk617/SWN-Trade-Lord/releases/download/beta/SWN-Trade-Lord-main.zip"
 }

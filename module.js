@@ -1,4 +1,6 @@
 import { initializeSettings } from "./settings.js";
+import { randomPC } from "./randomPC.js";
+import { worldTables } from "./worldTables.js";
 Hooks.once("init", function () {
   initializeSettings();
 });
@@ -17,6 +19,20 @@ Hooks.on("getVehicleBaseActorSheetHeaderButtons",(sheet, buttons)=>{
           }
       });
   });
+
+  Hooks.on("getCharacterActorSheetHeaderButtons",(sheet, buttons)=>{
+    console.log(sheet,buttons);
+      const target = (sheet.actor);
+        console.log(target);
+        buttons.unshift({
+            class: 'randomize',
+            label: 'Radomize',
+            icon: 'fa-solid fa-credit-card',
+            onclick: () => {
+               randomPC(target);
+            }
+        });
+    });
 
  async function main(target){
 
@@ -227,7 +243,7 @@ if (target.system.cargo.value < space) {
             rollMod += friction;
             rollMod += modifier;
             let roll = await new Roll("(3d6-(@skill+@attr))+@mods",{skill: rank, attr: attr, mods: rollMod});
-            await roll.toMessage();
+            await roll.toMessage({flavor: "Rolling Purchase Negotiation:"});
            //conpare to table
             var priceMod = 0
             console.log(roll._total);
@@ -419,7 +435,7 @@ buildConfirm(finalPrice,cargoObj,amount, target, space);
                         rollMod += friction;
                         rollMod += modifier;
             let roll = await new Roll("(3d6+(@skill+@attr))+@mods",{skill: rank, attr: attr, mods: rollMod});
-            await roll.toMessage();
+            await roll.toMessage({flavor: "Rolling Sale Negotiations:"});
            //conpare to table
             var priceMod = 0
             console.log(roll._total);
